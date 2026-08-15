@@ -15,54 +15,59 @@ import AboutUs from './pages/AboutUs'
 import Alphabet from './pages/Alphabet'
 import NotFound from './pages/NotFound'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <MainLayout />,
+      errorElement: <NotFound />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'lets-learn', element: <LetsLearn /> },
+        { path: 'alphabet', element: <Alphabet /> },
+        {
+          path: 'lessons/:lesson_no',
+          element: (
+            <PrivateRoute>
+              <Lesson />
+            </PrivateRoute>
+          ),
+        },
+        { path: 'login', element: <Login /> },
+        { path: 'register', element: <Register /> },
+        { path: 'forget-password', element: <ForgetPassword /> },
+        {
+          path: 'my-profile',
+          element: (
+            <PrivateRoute>
+              <MyProfile />
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: 'update-profile',
+          element: (
+            <PrivateRoute>
+              <UpdateProfile />
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: 'tutorials',
+          element: (
+            <PrivateRoute>
+              <Tutorials />
+            </PrivateRoute>
+          ),
+        },
+        { path: 'about-us', element: <AboutUs /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <MainLayout />,
-    errorElement: <NotFound />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'lets-learn', element: <LetsLearn /> },
-      { path: 'alphabet', element: <Alphabet /> },
-      {
-        path: 'lessons/:lesson_no',
-        element: (
-          <PrivateRoute>
-            <Lesson />
-          </PrivateRoute>
-        ),
-      },
-      { path: 'login', element: <Login /> },
-      { path: 'register', element: <Register /> },
-      { path: 'forget-password', element: <ForgetPassword /> },
-      {
-        path: 'my-profile',
-        element: (
-          <PrivateRoute>
-            <MyProfile />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: 'update-profile',
-        element: (
-          <PrivateRoute>
-            <UpdateProfile />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: 'tutorials',
-        element: (
-          <PrivateRoute>
-            <Tutorials />
-          </PrivateRoute>
-        ),
-      },
-      { path: 'about-us', element: <AboutUs /> },
-      { path: '*', element: <NotFound /> },
-    ],
-  },
-])
+    basename: import.meta.env.PROD ? '/kotoba-vocabulary-app/' : '/',
+  }
+)
 
 export default router
