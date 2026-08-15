@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-washi text-sumi font-body;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(34,67,107,0.05) 0, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(200,67,60,0.05) 0, transparent 40%);
+}
+
+::selection {
+  background: #C8433C;
+  color: #F6F1E4;
+}
+
+/* visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #D4A017;
+  outline-offset: 2px;
+}
+
+.hanko {
+  @apply flex items-center justify-center rounded-full border-2 border-shu text-shu font-display font-bold select-none;
+}
+
+.divider-torii {
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #22436B 0 10px, transparent 10px 18px);
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
