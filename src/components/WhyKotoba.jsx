@@ -1,7 +1,7 @@
 import { FaHeadphones, FaLayerGroup, FaRegLightbulb, FaMobileAlt } from 'react-icons/fa'
 
 const points = [
-  { icon: FaLayerGroup, title: 'Structured lessons', text: 'Ten themed lessons that build from greetings to gratitude, so nothing feels random.' },
+  { icon: FaLayerGroup, title: 'Structured lessons', text: 'Over 100 themed lessons that build from first greetings to nature and etiquette, so nothing feels random.' },
   { icon: FaHeadphones, title: 'Hear it, don\u2019t just read it', text: 'Every vocabulary card speaks the word aloud so pronunciation sticks from day one.' },
   { icon: FaRegLightbulb, title: 'Know when to use it', text: 'Each word comes with a real-life context, not just a dictionary definition.' },
   { icon: FaMobileAlt, title: 'Learn anywhere', text: 'A fully responsive layout means lessons work as well on your phone as your laptop.' },

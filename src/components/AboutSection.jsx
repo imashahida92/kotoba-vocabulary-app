@@ -1,3 +1,6 @@
+import vocabulary from '../data/vocabulary.json'
+import lessonsMeta from '../data/lessonsMeta.json'
+
 export default function AboutSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20" data-aos="fade-up">
@@ -9,9 +12,9 @@ export default function AboutSection() {
           </h2>
           <p className="mt-5 leading-relaxed text-sumi/70">
             Most learners quit not because grammar is hard, but because words don't stick. Kotoba
-            breaks Japanese down into ten focused lessons — greetings, numbers, family, food, time,
-            travel, verbs, feelings, shopping and closing phrases — so every session has a clear,
-            reachable goal.
+            breaks Japanese down into {lessonsMeta.length} focused lessons — from first greetings and
+            numbers all the way to nature, jobs, and polite expressions — so every session has a
+            clear, reachable goal.
           </p>
           <p className="mt-4 leading-relaxed text-sumi/70">
             Log in, pick a lesson, and work through cards that show you the word, how to say it, and
@@ -20,11 +23,11 @@ export default function AboutSection() {
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="rounded-2xl border border-ai/10 bg-white/60 p-4">
-              <p className="font-display text-2xl font-bold text-shu">10</p>
+              <p className="font-display text-2xl font-bold text-shu">{lessonsMeta.length}</p>
               <p className="text-sm text-sumi/60">structured lessons</p>
             </div>
             <div className="rounded-2xl border border-ai/10 bg-white/60 p-4">
-              <p className="font-display text-2xl font-bold text-shu">60+</p>
+              <p className="font-display text-2xl font-bold text-shu">{vocabulary.length}+</p>
               <p className="text-sm text-sumi/60">everyday words</p>
             </div>
           </div>

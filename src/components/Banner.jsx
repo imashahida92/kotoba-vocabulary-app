@@ -19,8 +19,8 @@ const slides = [
   {
     kanji: '道',
     reading: 'michi — the path',
-    title: 'A clear path through ten lessons',
-    text: 'From greetings to gratitude — structured lessons that build on each other.',
+    title: 'A clear path through 100+ lessons',
+    text: 'From first greetings to nature and etiquette — structured lessons that build on each other.',
     img: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1600&auto=format&fit=crop',
   },
 ]

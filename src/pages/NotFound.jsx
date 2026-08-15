@@ -9,6 +9,7 @@ export default function NotFound() {
 
   return (
     <div className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-5 py-16">
+      {/* Background torii-gate silhouette */}
       <svg
         viewBox="0 0 400 400"
         className="pointer-events-none absolute -top-10 left-1/2 h-[480px] w-[480px] -translate-x-1/2 opacity-[0.06] md:h-[600px] md:w-[600px]"
@@ -23,6 +24,7 @@ export default function NotFound() {
         />
       </svg>
 
+      {/* Faint scattered kanji for texture */}
       <span className="pointer-events-none absolute left-[8%] top-[18%] hidden font-jp text-6xl text-ai/5 md:block" aria-hidden="true">道</span>
       <span className="pointer-events-none absolute bottom-[14%] right-[10%] hidden font-jp text-7xl text-shu/5 md:block" aria-hidden="true">語</span>
 

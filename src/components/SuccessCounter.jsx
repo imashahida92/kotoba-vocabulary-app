@@ -1,9 +1,11 @@
 import CountUp from 'react-countup'
+import vocabulary from '../data/vocabulary.json'
+import lessonsMeta from '../data/lessonsMeta.json'
 
 const stats = [
   { label: 'Learners', value: 8400, suffix: '+' },
-  { label: 'Lessons', value: 10, suffix: '' },
-  { label: 'Vocabulary Words', value: 60, suffix: '+' },
+  { label: 'Lessons', value: lessonsMeta.length, suffix: '' },
+  { label: 'Vocabulary Words', value: vocabulary.length, suffix: '+' },
   { label: 'Tutorial Videos', value: 8, suffix: '' },
 ]
 

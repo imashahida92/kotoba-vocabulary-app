@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import VideoEmbed from '../components/VideoEmbed'
 
 const videos = [
   { id: 'pZ7tnNNfZro', title: 'Learn Hiragana — Full Alphabet for Beginners' },
@@ -26,22 +27,17 @@ export default function Tutorials() {
         <h1 className="mt-2 font-display text-4xl font-bold text-ai">Tutorials</h1>
         <p className="mx-auto mt-3 max-w-xl text-sumi/60">
           Reinforce every lesson with hand-picked videos on pronunciation, grammar and conversation.
+          Videos load only when you press play, so the page stays fast.
         </p>
       </div>
 
       <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((v) => (
-          <div key={v.id} className="overflow-hidden rounded-2xl border border-ai/10 bg-white/70 shadow-sm">
-            <div className="aspect-video w-full">
-              <iframe
-                className="h-full w-full"
-                src={`https://www.youtube.com/embed/${v.id}`}
-                title={v.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+          <div key={v.id} className="overflow-hidden rounded-2xl border border-ai/10 bg-white/70 p-3 shadow-sm">
+            <div className="overflow-hidden rounded-xl">
+              <VideoEmbed id={v.id} title={v.title} />
             </div>
-            <p className="p-4 font-semibold text-sumi">{v.title}</p>
+            <p className="px-1 pt-3 font-semibold text-sumi">{v.title}</p>
           </div>
         ))}
       </div>

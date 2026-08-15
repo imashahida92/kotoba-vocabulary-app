@@ -3,13 +3,18 @@ import { useParams, Link } from 'react-router-dom'
 import vocabulary from '../data/vocabulary.json'
 import VocabCard from '../components/VocabCard'
 import VocabModal from '../components/VocabModal'
+import ProgressBar from '../components/ProgressBar'
+import useProgress from '../hooks/useProgress'
 import { FiArrowLeft } from 'react-icons/fi'
 
 export default function Lesson() {
   const { lesson_no } = useParams()
   const [activeWord, setActiveWord] = useState(null)
+  const { isCompleted, toggleWord } = useProgress()
 
   const words = vocabulary.filter((w) => String(w.lesson_no) === String(lesson_no))
+  const completedInLesson = words.filter((w) => isCompleted(w.id)).length
+  const percent = words.length ? Math.round((completedInLesson / words.length) * 100) : 0
 
   useEffect(() => {
     document.title = `Kotoba | Lesson ${lesson_no}`
@@ -26,12 +31,27 @@ export default function Lesson() {
         </p>
       </div>
 
+      {words.length > 0 && (
+        <div className="mx-auto mt-8 max-w-md">
+          <ProgressBar
+            percent={percent}
+            label={`${completedInLesson} / ${words.length} words learned`}
+          />
+        </div>
+      )}
+
       {words.length === 0 ? (
         <p className="mt-16 text-center text-sumi/60">No vocabulary found for this lesson yet.</p>
       ) : (
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {words.map((item) => (
-            <VocabCard key={item.id} item={item} onWhenToSay={setActiveWord} />
+            <VocabCard
+              key={item.id}
+              item={item}
+              onWhenToSay={setActiveWord}
+              completed={isCompleted(item.id)}
+              onToggleComplete={toggleWord}
+            />
           ))}
         </div>
       )}

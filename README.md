@@ -21,9 +21,15 @@ context instead of a bare dictionary definition.
 - **Firebase Authentication** — email/password + Google social login, protected
   (private) routes, persistent session on reload (no false redirect to `/login`
   for a logged-in user refreshing a private page).
-- **10 vocabulary lessons, 60 words** — real Japanese words with pronunciation,
+- **102 vocabulary lessons, 386 words** — real Japanese words with pronunciation,
   meaning, part of speech, difficulty, "when to say it" context, and an example
-  sentence, stored as local JSON (`src/data/vocabulary.json`).
+  sentence, stored as local JSON (`src/data/vocabulary.json`), grouped into
+  themed lessons via `src/data/lessonsMeta.json` and browsable by category on
+  the Let's Learn page.
+  > Note: the original assignment brief specifies exactly 10 lesson cards.
+  > This build was intentionally expanded to 100+ lessons per a later request —
+  > revert to the original `lessonTitles` array of 10 if submitting against
+  > that spec unchanged.
 - **Speak-it-out-loud pronunciation** — click any vocabulary card to hear it
   spoken aloud using the browser's built-in Web Speech API (`ja-JP`).
 - **"When to Say" modal** — opens contextual usage and an example sentence for
@@ -69,7 +75,7 @@ src/
   routes/         PrivateRoute guard
   layouts/        MainLayout (Header + Outlet + Footer)
   pages/          Route-level pages (Home, LetsLearn, Lesson, Login, ...)
-  data/           vocabulary.json — 60 Japanese words across 10 lessons
+  data/           vocabulary.json (386 words) + lessonsMeta.json (102 lessons, grouped by category)
   firebase/       firebase.config.js — reads keys from environment variables
 ```
 

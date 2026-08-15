@@ -23,6 +23,7 @@ export default function Header() {
     <>
       <NavLink to="/" className={navLinkClass} onClick={() => setOpen(false)}>Home</NavLink>
       <NavLink to="/lets-learn" className={navLinkClass} onClick={() => setOpen(false)}>Start Learning</NavLink>
+      <NavLink to="/alphabet" className={navLinkClass} onClick={() => setOpen(false)}>Alphabet</NavLink>
       <NavLink to="/tutorials" className={navLinkClass} onClick={() => setOpen(false)}>Tutorials</NavLink>
       <NavLink to="/about-us" className={navLinkClass} onClick={() => setOpen(false)}>About Us</NavLink>
       {user && (
