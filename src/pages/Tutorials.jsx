@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const videos = [
-  { id: 'w7uJ5-fSJKg', title: 'Hiragana in 1 Hour' },
-  { id: 'V6oXo0jqcy4', title: 'Learn Katakana Fast' },
-  { id: '8QjkCT3ZOJ8', title: 'Basic Japanese Greetings' },
-  { id: '5RTgHVeM6Sc', title: 'Japanese Numbers 1-100' },
-  { id: 'IIxvQNBNoyE', title: 'Essential Japanese Phrases' },
-  { id: 'nrsyayZjA3g', title: 'Japanese Grammar Basics' },
-  { id: '3wt8-8fzKtY', title: 'Common Japanese Verbs' },
-  { id: '5v2ZEuXtCsA', title: 'Everyday Conversation Practice' },
+  { id: 'pZ7tnNNfZro', title: 'Learn Hiragana — Full Alphabet for Beginners' },
+  { id: 'z4qh8BVrb3w', title: 'How to Write and Read All Hiragana (30 Minutes)' },
+  { id: 'CqwE1F0XEL4', title: '25 Must-Know Japanese Greetings' },
+  { id: 'bOUqVC4XkOY', title: 'How to Count in Japanese, 1–100' },
+  { id: 'UneYOL0DQxk', title: 'は & です — Grammar for Absolute Beginners' },
+  { id: 'hblln4roLGM', title: 'Top 30 Common Japanese Verbs' },
+  { id: 'DiqA7fHShBU', title: '20 Daily Japanese Conversations' },
+  { id: 'sbw5IDYyoF0', title: 'Japanese Grammar Basics, All in One Video' },
 ]
 
 export default function Tutorials() {

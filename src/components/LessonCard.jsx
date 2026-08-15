@@ -10,7 +10,7 @@ export default function LessonCard({ number, title }) {
         {number}
       </span>
       <p className="font-display text-lg font-bold text-ai">Lesson {number}</p>
-      <p className="text-xs uppercase tracking-widest text-sumi/50">{title}</p>
+      <p className="line-clamp-2 text-xs uppercase tracking-widest text-sumi/50">{title}</p>
     </Link>
   )
 }
